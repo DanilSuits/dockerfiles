@@ -10,7 +10,7 @@ ENV ES_RELEASE EventStore-OSS-Ubuntu-v${ES_VERSION}
 ENV ES_INSTALLER ${ES_RELEASE}.tar.gz
 
 ADD http://download.geteventstore.com/binaries/${ES_INSTALLER} /tmp/
-RUN tar xfz /tmp/${ES_INSTALLER} -C /opt
+RUN tar xfz /tmp/${ES_INSTALLER} -C /opt && rm /tmp/${ES_INSTALLER}
 
 EXPOSE 2113
 EXPOSE 1113
