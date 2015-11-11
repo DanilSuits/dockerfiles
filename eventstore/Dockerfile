@@ -21,5 +21,8 @@ ENV EVENTSTORE_WORKER_THREADS 12
 
 WORKDIR /opt/EventStore-OSS-Ubuntu-v$ES_VERSION
 
+# TODO: There's a bug in run-node that prevents using the exec form here.  The fix appears
+#       to be scheduled for the 3.4.0 release
+# https://github.com/EventStore/EventStore/commit/b97b75e599e974100078074a38055851be6397e9
 CMD ./run-node.sh --ext-http-prefixes=http://*:2113/ --ext-ip=0.0.0.0 \
-    --db /data/db --log /data/logs --run-projections=all
+    --db=/data/db --log=/data/logs --run-projections=all
