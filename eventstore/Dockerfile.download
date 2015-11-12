@@ -1,0 +1,13 @@
+# EventStore (geteventstore.com)
+#
+# VERSION               0.0.2
+
+FROM      ubuntu:14.04.2
+MAINTAINER Danil Suits <danil@vast.com>
+
+ENV ES_VERSION 3.3.0
+ENV ES_RELEASE EventStore-OSS-Ubuntu-v${ES_VERSION}
+ENV ES_INSTALLER ${ES_RELEASE}.tar.gz
+
+ADD http://download.geteventstore.com/binaries/${ES_INSTALLER} /tmp/
+
